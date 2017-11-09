@@ -6,7 +6,8 @@ module Web::Controllers::Entries
 
     def call(params)
       # @entries = EntryRepository.new.all
-      @entries = EntryRepository.new.most_recent
+      # @entries = EntryRepository.new.most_recent
+      @entries = EntryRepository.new.least_recent
     end
   end
 end
