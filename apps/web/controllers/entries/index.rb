@@ -3,11 +3,15 @@ module Web::Controllers::Entries
     include Web::Action
 
     expose :entries
+    expose :sort
 
     def call(params)
+      sort = params[:sort]
+      
       # @entries = EntryRepository.new.all
-      # @entries = EntryRepository.new.most_recent
-      @entries = EntryRepository.new.least_recent
+      @entries = EntryRepository.new.most_recent
+      @sort = sort
+      # @sort = params[:sort] will be also fine
     end
   end
 end
